@@ -27,9 +27,9 @@
 	\int_{-1}^{1}f(x)\ud{x} \approx \frac{5}{9}f(-\frac{\sqrt{15}}{5})+\frac{8}{9}f(0)+\frac{5}{9}f(\frac{\sqrt{15}}{5})
 \end{equation*}
 其中,
-\begin{equation}
+\begin{equation*}
 	f(x) = \frac{\sqrt{x}}{(1+x)^2}
-\end{equation}
+\end{equation*}
 作变量带换, 有
 \begin{align*}
 	I & = \int_{0}^{1}\frac{\sqrt{x}}{(1+x)^2}\ud{x} \\
@@ -118,15 +118,15 @@ f(x) & 0.2500 & 0.2268 & 0.2066 \\
 
 化简有
 
-\begin{equation}
+\begin{equation*}
 	P_2(x) = \frac{150\,x^2-547\,x+647}{10}
-\end{equation}
+\end{equation*}
 
 从而
 
-\begin{equation}
+\begin{equation*}
 	f'(0.6) = -3.6700405 \times 10^{-5}\,{\it del}\left(0.6\right)
-\end{equation}
+\end{equation*}
 
 利用课本$P_{275}$公式8.10
 
@@ -180,6 +180,7 @@ f(x) & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818 \\
 9.1
 在区间[0, 1]上使用欧拉法解下列初值问题, 取步长h=0.1, 保留到小数点后4位.
 
+(2)
 \begin{equation*}
 	\begin{cases}
 		y' = \sin{x}+e^{-x} \\
@@ -190,7 +191,6 @@ f(x) & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818 \\
 解:
 
 经计算, 结果如下表
-
 \begin{table}[h]
 	\centering
 	\begin{tabular}{c|c c c c c c c c c c c}
@@ -201,12 +201,17 @@ f(x) & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818 \\
 		\hline
 	\end{tabular}
 \end{table}
+
+(4)
 \begin{equation*}
 	\begin{cases}
-		y' = -y
+		y' = -y \\
 		y(0) = 2
 	\end{cases}
 \end{equation*}
+解:
+
+经计算, 结果如下表
 \begin{table}[h]
 	\begin{tabular}{c|c c c c c c c c c c c}
 		\hline
@@ -219,12 +224,51 @@ f(x) & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818 \\
 
 9.2
 在区间[0, 1]上用欧拉方法, 改进的欧拉方法和梯形法解初值问题, 取步长为h=0.1, 精确到小数点后4位, 并比较三种算法结果的误差. \\
+
+(1)
+\begin{equation*}
+	\begin{cases}
+		y' = y-\frac{2x}{y} \\
+		y(0) = 1
+	\end{cases}
+\end{equation*}
+解:
+
+计算结果如下表
 \begin{table}[h]
 	\begin{tabular}{c | c c c c c c c c c c c}
 		\hline
-		x & 0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0 \\ 
+		x      & 0      & 0.1    & 0.2    & 0.3    & 0.4    & 0.5    & 0.6    & 0.7    & 0.8    & 0.9    & 1.0    \\ 
 		\hline
-		y & 1.0 & 1.1 & 1.1918 & 1.2774 & 1.3582 & 1.4351 & 1.509 & 1.5803 & 1.6498 & 1.7178 & 1.7848 \\
+		$y_E$  & 1.0    & 1.1    & 1.1918 & 1.2774 & 1.3582 & 1.4351 & 1.5090 & 1.5803 & 1.6498 & 1.7178 & 1.7848 \\
+		\hline
+		$y_E+$ & 1.0    & 1.0959 & 1.1841 & 1.2662 & 1.3434 & 1.4164 & 1.4860 & 1.5525 & 1.6165 & 1.6782 & 1.7379 \\
+		\hline
+		$y_T$  & 1.0000 & 1.0957 & 1.1836 & 1.2654 & 1.3423 & 1.4151 & 1.4843 & 1.5504 & 1.6139 & 1.6751 & 1.7342 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+(2)
+\begin{equation*}
+	\begin{cases}
+		y' = xy^2 \\
+		y(0) = 1
+	\end{cases}
+\end{equation*}
+解:
+
+计算结果如下表
+\begin{table}[h]
+	\begin{tabular}{c | c c c c c c c c c c c}
+		\hline
+		x      & 0      & 0.1    & 0.2    & 0.3    & 0.4    & 0.5    & 0.6    & 0.7    & 0.8    & 0.9    & 1.0    \\
+		\hline
+		$y_E$  & 1.0    & 1.000  & 1.0100 & 1.0304 & 1.0623 & 1.1074 & 1.1687 & 1.2507 & 1.3601 & 1.5081 & 1.7129 \\
+		\hline
+		$y_E+$ & 1.0    & 1.005  & 1.0204 & 1.0470 & 1.0868 & 1.1426 & 1.2190 & 1.3234 & 1.4684 & 1.6758 & 1.9881 \\
+		\hline
+		$y_T$  & 1.0000 & 1.0051 & 1.0205 & 1.0474 & 1.0875 & 1.1439 & 1.2213 & 1.3277 & 1.4766 & 1.6926 & 2.0264 \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -239,46 +283,60 @@ f(x) & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818 \\
 \end{equation*}
 
 % [x,y]=RungeKuttaEuler(@(x,y) y^2*exp(-x), 1, 2, 1, 0.1)
+\begin{table}[h]
+	\begin{tabular}{c|c c c c c c c c c c c}
+		\hline
+		x & 1.0 & 1.1 & 1.2 & 1.3 & 1.4 & 1.5 & 1.6 & 1.7 & 1.8 & 1.9 & 2.0 \\
+		\hline
+		y & 1.0000 & 1.0363 & 1.0714 & 1.1054 & 1.1380 & 1.1692 & 1.1990 & 1.2273 & 1.2540 & 1.2793 & 1.3030 \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\begin{tabular}{c|c c c c c c c c c c c}
-\hline
- x & 1.0 & 1.1 & 1.2 & 1.3 & 1.4 & 1.5 & 1.6 & 1.7 & 1.8 & 1.9 & 2.0 \\
- \hline
- y & 1.0000 & 1.0363 & 1.0714 & 1.1054 & 1.1380 & 1.1692 & 1.1990 & 1.2273 & 1.2540 & 1.2793 & 1.3030 \\
- \hline
-\end{tabular}
+\begin{equation*}
+	\begin{cases}
+		y' = x^2+x^3y \\
+		y(1) = 1, x \in [1,2]
+	\end{cases}
+\end{equation*}
 
 % [x,y]=RungeKuttaEuler(@(x,y) x^2+x^3*y, 1,2, 1,0.1)
+\begin{table}[h]
+	\begin{tabular}{c|c c c c c c c c c c c}
+		\hline
+		 x & 1.0 & 1.1 & 1.2 & 1.3 & 1.4 & 1.5 & 1.6 & 1.7 & 1.8 & 1.9 & 2.0 \\
+		\hline
+		y & 1.0000 & 1.2401 & 1.5873 & 2.1032 & 2.8979 & 4.1785 & 6.3577 & 10.3105 & 18.0306 & 34.4383 & 72.8124 \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\begin{tabular}{c|c c c c c c c c c c c}
-\hline
- x & 1.0 & 1.1 & 1.2 & 1.3 & 1.4 & 1.5 & 1.6 & 1.7 & 1.8 & 1.9 & 2.0 \\
-\hline
-y & 1.0000 & 1.2401 & 1.5873 & 2.1032 & 2.8979 & 4.1785 & 6.3577 & 10.3105 & 18.0306 & 34.4383 & 72.8124 \\
-\hline
-\end{tabular}
 
 9.6
 用欧拉方法和预估-校正方法求解初值问题
-\begin{equation}
+\begin{equation*}
 	\begin{cases}
 		y' = x+y \\
 		y(0) = 0, x\in[0,1]
 	\end{cases}
-\end{equation}
-
+\end{equation*}
 h=0.1, 精确到小数点后5位, 并与精确解$y=-x-1+2e^x$相比较
 
-\begin{tabular}{c|c c c c c c c c c c c}
-\hline
-x & 0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0 \\
-\hline
-$y_{Euler}$ & 0 & 0 & 0.01 & 0.03100 & 0.06410 & 0.11051 & 0.17156 & 0.24872 & 0.34359 & 0.45795 & 0.59374 \\
-$y_{}$ & oiv \\
-\hline
-精确值 & 1.00000 & 1.11034 & 1.24281 & 1.39972 & 1.58365 & 1.79744 & 2.04424 & 2.32751 & 2.65108 & 3.01921 & 3.43656 \\
-\hline
+解:
 
-\end{tabular}
+计算结果如下表
+\begin{table}[h]
+	\begin{tabular}{c|c c c c c c c c c c c}
+		\hline
+		x           & 0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0 \\
+		\hline
+		$y_{Euler}$ & 0 & 0 & 0.01 & 0.03100 & 0.06410 & 0.11051 & 0.17156 & 0.24872 & 0.34359 & 0.45795 & 0.59374 \\
+		$y_{}$      \\
+		\hline
+		精确值       & 1.00000 & 1.11034 & 1.24281 & 1.39972 & 1.58365 & 1.79744 & 2.04424 & 2.32751 & 2.65108 & 3.01921 & 3.43656 \\
+		\hline
+	\end{tabular}
+\end{table}
+
 \end{CJK}
 \end{document}
