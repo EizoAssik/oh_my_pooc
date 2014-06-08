@@ -8,30 +8,56 @@
 \begin{document}
 \begin{CJK}{UTF8}{gbsn}
 
-\textbf{第七章练习题}
+\textbf{第七章练习题} \\
+
 7.11
-
-按照书$P_{261}$, 公式7.56构造求积公式如下
-
+构造Gauss型求积公式
 \begin{equation*}
-	\int_{-1}^{1}f(x)\ud{x} = \frac{5}{9}f(-\frac{\sqrt{15}}{5})+\frac{8}{9}f(0)+\frac{5}{9}f(\frac{\sqrt{15}}{5})
+	\int_{-1}^{1}f(x)\ud{x} \approx A_0 f(x_0) + A_1 f(x_1) + A_2 f(x_2)
+\end{equation*}
+并由此计算积分
+\begin{equation*}
+	\int_{0}^{1}\frac{\sqrt{x}}{(1+x)^2}\ud{x}
 \end{equation*}
 
-作变量带换, 有
+解: \\
 
+按照书$P_{261}$, 公式7.56构造求积公式如下
+\begin{equation*}
+	\int_{-1}^{1}f(x)\ud{x} \approx \frac{5}{9}f(-\frac{\sqrt{15}}{5})+\frac{8}{9}f(0)+\frac{5}{9}f(\frac{\sqrt{15}}{5})
+\end{equation*}
+其中,
+\begin{equation}
+	f(x) = \frac{\sqrt{x}}{(1+x)^2}
+\end{equation}
+作变量带换, 有
 \begin{align*}
 	I & = \int_{0}^{1}\frac{\sqrt{x}}{(1+x)^2}\ud{x} \\
-	  & = \int_{-1}^{1}\frac{\sqrt{\frac{1+t}{2}}}{(1+\frac{1+t}{2})^2}\ud{t} \\
-	  & = {{\sqrt{5-\sqrt{15}}\,\left(3\,\sqrt{2}\,5^{{{3}\over{2}}}\,\sqrt{15}+3\,2^{{{7}\over{2}}}\,5^{{{3}\over{2}}}\right)+\sqrt{\sqrt{15}+5}\,\left(3\,2^{{{13}\over{2}}}\,\sqrt{5}-3\,2^{{{7}\over{2}}}\,\sqrt{5}\,\sqrt{15}\right)+49\,2^{{{9}\over{2}}}}\over{3969}} \\
-	  & = 0.66506
+	  & = \sqrt{2}\int_{-1}^{1}\frac{\sqrt{1+t}}{(3+t)^2}\ud{t} \\
+	  & = \sqrt{2}\,\left({{8\,\sqrt{{{\sqrt{3}}\over{\sqrt{5}}}+1}}\over{9\,\left({{\sqrt{3}}\over{\sqrt{5}}}+3\right)^2}}+{{5\,\sqrt{1-{{\sqrt{3}}\over{\sqrt{5}}}}}\over{9\,\left(3-{{\sqrt{3}}\over{\sqrt{5}}}\right)^2}}+{{8}\over{81}}\right) \\
+	  & \approx 0.33253
 \end{align*}
 
+
 7.12
+构造Gauss型求积公式
+
+\begin{equation*}
+	\int_{-1}^{1}f(x)\ud{x} \approx A_0 f(x_0) + A_1 f(x_1)
+\end{equation*}
+
+并由此计算积分
+
+\begin{equation*}
+	\int_{0}^{1}\sqrt{1+2x}\ud{x}
+\end{equation*}
+
+解: \\
 
 按照书$P_{261}$, 公式7.55构造求积公式如下
 
 \begin{equation*}
-	\int_{-1}^{1}f(x)\ud{x} = f(-\frac{1}{\sqrt{3}})+f(\frac{1}{\sqrt{3}})
+	\int_{-1}^{1}f(x)\ud{x} \approx f(-\frac{1}{\sqrt{3}})+f(\frac{1}{\sqrt{3}})
 \end{equation*}
 
 
@@ -53,10 +79,10 @@
 作变量代换, 有
 
 \begin{align*}
-	\int_{0}^{1}f(x)\ud(x) & = \int_{-1}^{1}f(\frac{1+t}{2})\ud{t} \\
-						   & = \int_{-1}^{1}\sqrt{2+t}\ud{t} \\
-						   & = \sqrt{2-\frac{1}{\sqrt{3}}} + \sqrt{2+\frac{1}{\sqrt{3}}} \\
-						   & = 2.79816
+	\int_{0}^{1}f(x)\ud(x) & = \int_{-1}^{1}f(\frac{1+t}{2})\ud{\frac{1+t}{2}} \\
+						   & = \frac{1}{2}\int_{-1}^{1}\sqrt{2+t}\ud{t} \\
+						   & = \frac{1}{2}(\sqrt{2-\frac{1}{\sqrt{3}}} + \sqrt{2+\frac{1}{\sqrt{3}}}) \\
+						   & \approx 1.3987
 \end{align*}
 
 
@@ -161,6 +187,7 @@ f(x) & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818 \\
 	\end{cases}
 \end{equation*}
 \begin{tabular}{c|c c c c c c c c c c c}
+\centering
 \hline
 x & 0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0 \\
 \hline
