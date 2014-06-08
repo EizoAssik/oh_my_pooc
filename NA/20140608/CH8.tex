@@ -13,19 +13,26 @@
 
 按照书$P_{261}$, 公式7.56构造求积公式如下
 
-\begin{equation}
+\begin{equation*}
 	\int_{-1}^{1}f(x)\ud{x} = \frac{5}{9}f(-\frac{\sqrt{15}}{5})+\frac{8}{9}f(0)+\frac{5}{9}f(\frac{\sqrt{15}}{5})
-\end{equation}
+\end{equation*}
 
+作变量带换, 有
 
+\begin{align*}
+	I & = \int_{0}^{1}\frac{\sqrt{x}}{(1+x)^2}\ud{x} \\
+	  & = \int_{-1}^{1}\frac{\sqrt{\frac{1+t}{2}}}{(1+\frac{1+t}{2})^2}\ud{t} \\
+	  & = {{\sqrt{5-\sqrt{15}}\,\left(3\,\sqrt{2}\,5^{{{3}\over{2}}}\,\sqrt{15}+3\,2^{{{7}\over{2}}}\,5^{{{3}\over{2}}}\right)+\sqrt{\sqrt{15}+5}\,\left(3\,2^{{{13}\over{2}}}\,\sqrt{5}-3\,2^{{{7}\over{2}}}\,\sqrt{5}\,\sqrt{15}\right)+49\,2^{{{9}\over{2}}}}\over{3969}} \\
+	  & = 0.66506
+\end{align*}
 
 7.12
 
 按照书$P_{261}$, 公式7.55构造求积公式如下
 
-\begin{equation}
+\begin{equation*}
 	\int_{-1}^{1}f(x)\ud{x} = f(-\frac{1}{\sqrt{3}})+f(\frac{1}{\sqrt{3}})
-\end{equation}
+\end{equation*}
 
 
 % 构造Gauss-Chebyshev求积公式如下
@@ -48,8 +55,8 @@
 \begin{align*}
 	\int_{0}^{1}f(x)\ud(x) & = \int_{-1}^{1}f(\frac{1+t}{2})\ud{t} \\
 						   & = \int_{-1}^{1}\sqrt{2+t}\ud{t} \\
-						   & = \sqrt{2-\frac{1}{\sqrt{3}}} + \sqrt{2+\frac{1}{\sqrt{3}}}
-						   & = 
+						   & = \sqrt{2-\frac{1}{\sqrt{3}}} + \sqrt{2+\frac{1}{\sqrt{3}}} \\
+						   & = 2.79816
 \end{align*}
 
 
