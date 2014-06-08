@@ -1,0 +1,232 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{CJKutf8}
+\usepackage[fleqn]{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{siunitx}
+\newcommand{\ud}[1]{\mathrm{d} {#1}}
+\begin{document}
+\begin{CJK}{UTF8}{gbsn}
+
+\textbf{第七章练习题}
+7.11
+
+按照书$P_{261}$, 公式7.56构造求积公式如下
+
+\begin{equation}
+	\int_{-1}^{1}f(x)\ud{x} = \frac{5}{9}f(-\frac{\sqrt{15}}{5})+\frac{8}{9}f(0)+\frac{5}{9}f(\frac{\sqrt{15}}{5})
+\end{equation}
+
+
+
+7.12
+
+按照书$P_{261}$, 公式7.55构造求积公式如下
+
+\begin{equation}
+	\int_{-1}^{1}f(x)\ud{x} = f(-\frac{1}{\sqrt{3}})+f(\frac{1}{\sqrt{3}})
+\end{equation}
+
+
+% 构造Gauss-Chebyshev求积公式如下
+
+% \begin{align*}
+	% \int^{1}_{-1}f(x)\ud{x} & = \frac{\pi}{2}\sum_{k=1}^{2}{g(cos(\frac{2k-1}{4}))} \\
+	                        % & = \frac{\pi}{2}[g(\cos\frac{\pi}{4})+g(\cos\frac{3\pi}{4})] \\
+	                        % & = \frac{\pi}{2}[g(\frac{\sqrt{2}}{2})+g(-\frac{\sqrt{2}}{2})]
+% \end{align*}
+
+其中
+
+\begin{equation*}
+	% g(x) = \sqrt{1+2x}\sqrt{1-x^2}
+	f(x) = \sqrt{1+2x}
+\end{equation*}
+
+作变量代换, 有
+
+\begin{align*}
+	\int_{0}^{1}f(x)\ud(x) & = \int_{-1}^{1}f(\frac{1+t}{2})\ud{t} \\
+						   & = \int_{-1}^{1}\sqrt{2+t}\ud{t} \\
+						   & = \sqrt{2-\frac{1}{\sqrt{3}}} + \sqrt{2+\frac{1}{\sqrt{3}}}
+						   & = 
+\end{align*}
+
+
+
+\textbf{第八章练习题}
+
+8.1\\
+\begin{tabular}{|c | c c c|}
+\hline
+x    & 1.0    & 2.0    & 3.0 \\
+\hline
+f(x) & 0.2500 & 0.2268 & 0.2066 \\
+\hline
+\end{tabular}
+
+构造二次插值多项式$P_2(x)$作为$f(x)$的近似
+
+\begin{equation*}
+	P_{2}(x) = \frac{(x-x_{1})(x-x_{2})}{2h^2}f(x_0) - \frac{(x-x_0)(x-x_2)}{h^2} + \frac{(x-x_0)(x-x_1)}{2h^2}
+\end{equation*}
+
+代入表格，数据，得
+
+\begin{equation*}
+	P_2(x) = \frac{1}{0.1^2}(\frac{0.2500(x-1.1)(x-1.2)}{2}-\frac{0.2268(x-1.0)(x-1.2)}{1}+\frac{0.2066(x-1.0)(x-1.1)}{2})
+\end{equation*}
+
+即
+
+\begin{equation*}
+	P_2(x) = 0.001250(x-1.1)(x-1.2) - 0.002268(x-1.0)(x-1.2) + 0.001033(x-1.0)(x-1.1)
+\end{equation*}
+
+化简有
+
+\begin{equation}
+	P_2(x) = \frac{150\,x^2-547\,x+647}{10}
+\end{equation}
+
+从而
+
+\begin{equation}
+	f'(0.6) = -3.6700405 \times 10^{-5}\,{\it del}\left(0.6\right)
+\end{equation}
+
+利用课本$P_{275}$公式8.10
+
+\begin{align*}
+	2hf'(1.0) & = -0.0494 \\
+	2hf'(1.1) & = -0.0433 \\
+	2hf'(1.2) & = -0.0373 \\
+\end{align*}
+
+从而
+
+\begin{align*}
+	hf'(1.0) & = -0.247 \\
+	hf'(1.1) & = -0.216 \\
+	hf'(1.2) & = -0.186 \\
+\end{align*}
+
+8.2
+利用下表, 求$x=0.6$处的导数.\\
+
+\begin{tabular}{c| c c c c c}
+\hline
+x    & 0.4       & 0.5       & 0.6       & 0.7       & 0.8 \\
+\hline
+f(x) & 1.5836494 & 1.7974426 & 2.0442376 & 2.3275054 & 2.6510818 \\
+\hline
+\end{tabular}
+
+利用课本P275公式8.14, 有 \\
+
+\begin{align*}
+	12hf'(0.4) & =  2.380297 \\
+	12hf'(0.5) & =  2.756952 \\
+	12hf'(0.6) & =  3.173070 \\
+	12hf'(0.7) & =  3.633028 \\
+	12hf'(0.8) & = 20.297579 \\
+\end{align*}
+
+从而 \\
+
+\begin{align*}
+	f'(0.4) & =  1.983580 \\
+	f'(0.5) & =  2.297460 \\
+	f'(0.6) & =  2.644225 \\
+	f'(0.7) & =  3.027523 \\
+	f'(0.8) & = 16.914649 \\
+\end{align*}
+
+\textbf{第九章练习题}
+
+9.1
+在区间[0, 1]上使用欧拉法解下列初值问题, 取步长h=0.1, 保留到小数点后4位.
+
+\begin{equation*}
+	\begin{cases}
+		y' = \sin{x}+e^{-x} \\
+		y(0) = 0
+	\end{cases}
+\end{equation*}
+\begin{tabular}{c|c c c c c c c c c c c}
+\hline
+x & 0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0 \\
+\hline
+y & 0 & 0.1000 & 0.2005 & 0.3022 & 0.4058 & 0.5118 & 0.6204 & 0.7318 & 0.8458 & 0.9625 & 1.0815 \\
+\hline
+\end{tabular}
+\begin{equation*}
+	\begin{cases}
+		y' = -y
+		y(0) = 2
+	\end{cases}
+\end{equation*}
+\begin{tabular}{c|c c c c c c c c c c c}
+\hline
+x & 0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0 \\
+\hline
+y & 2.0000 & 1.8000 & 1.6200 & 1.4580 & 1.3122 & 1.1810 & 1.0629 & 0.9566 & 0.8609 & 0.7748 & 0.6974 \\
+\hline
+\end{tabular}
+
+9.2
+在区间[0, 1]上用欧拉方法, 改进的欧拉方法和梯形法解初值问题, 取步长为h=0.1, 精确到小数点后4位, 并比较三种算法结果的误差. \\
+
+9.3
+用四阶RungeKuttaEuler法求解初值问题, h=0.1精确到小数点后4位. \\
+\begin{equation*}
+	\begin{cases}
+		y' = y^{2}e^{-x} \\
+		y(1) = 1, x\in[1,2]
+	\end{cases}
+\end{equation*}
+
+% [x,y]=RungeKuttaEuler(@(x,y) y^2*exp(-x), 1, 2, 1, 0.1)
+
+\begin{tabular}{c|c c c c c c c c c c c}
+\hline
+ x & 1.0 & 1.1 & 1.2 & 1.3 & 1.4 & 1.5 & 1.6 & 1.7 & 1.8 & 1.9 & 2.0 \\
+ \hline
+ y & 1.0000 & 1.0363 & 1.0714 & 1.1054 & 1.1380 & 1.1692 & 1.1990 & 1.2273 & 1.2540 & 1.2793 & 1.3030 \\
+ \hline
+\end{tabular}
+
+% [x,y]=RungeKuttaEuler(@(x,y) x^2+x^3*y, 1,2, 1,0.1)
+
+\begin{tabular}{c|c c c c c c c c c c c}
+\hline
+ x & 1.0 & 1.1 & 1.2 & 1.3 & 1.4 & 1.5 & 1.6 & 1.7 & 1.8 & 1.9 & 2.0 \\
+\hline
+y & 1.0000 & 1.2401 & 1.5873 & 2.1032 & 2.8979 & 4.1785 & 6.3577 & 10.3105 & 18.0306 & 34.4383 & 72.8124 \\
+\hline
+\end{tabular}
+
+9.6
+用欧拉方法和预估-校正方法求解初值问题
+\begin{equation}
+	\begin{cases}
+		y' = x+y \\
+		y(0) = 0, x\in[0,1]
+	\end{cases}
+\end{equation}
+
+h=0.1, 精确到小数点后5位, 并与精确解$y=-x-1+2e^x$相比较
+
+\begin{tabular}{c|c c c c c c c c c c c}
+\hline
+x & 0 & 0.1 & 0.2 & 0.3 & 0.4 & 0.5 & 0.6 & 0.7 & 0.8 & 0.9 & 1.0 \\
+\hline
+$y_{Euler}$ & 0 & 0 & 0.01 & 0.03100 & 0.06410 & 0.11051 & 0.17156 & 0.24872 & 0.34359 & 0.45795 & 0.59374 \\
+$y_{}$ & oiv \\
+\hline
+精确值 & 1.00000 & 1.11034 & 1.24281 & 1.39972 & 1.58365 & 1.79744 & 2.04424 & 2.32751 & 2.65108 & 3.01921 & 3.43656 \\
+\hline
+
+\end{tabular}
+\end{CJK}
+\end{document}
